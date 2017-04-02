@@ -16,8 +16,13 @@
       })
       .state('app.product-new', {
         url: '/product/new',
-        templateUrl: './src/product/product-new.html',
+        templateUrl: './src/product/product-form.html',
         controller: 'ProductNewController'
+      })
+      .state('app.product-edit', {
+        url: '/product/edit/:id',
+        templateUrl: './src/product/product-form.html',
+        controller: 'ProductEditController'
       });
   }
 

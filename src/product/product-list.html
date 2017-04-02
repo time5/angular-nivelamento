@@ -5,7 +5,7 @@
 </div>
 
 <div class="col-md-6 text-right">
-    <a href="#" class="btn btn-primary">Novo</a>
+    <a href="#" class="btn btn-primary" ui-sref="app.product-new">Novo</a>
 </div>
 
 <div class="col-md-12">
@@ -31,7 +31,7 @@
                 <td ng-bind="product.name"></td>
                 <td ng-bind="product.price | currency: 'R$ '"></td>
                 <td>
-                    <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="#" class="btn btn-warning btn-sm" ui-sref="app.product-edit({id: product.id})">Editar</a>
                     <a href="#" class="btn btn-danger btn-sm" ng-click="removeProduct(product.id)">Remover</a>                    
                 </td>
             </tr>

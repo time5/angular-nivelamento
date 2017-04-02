@@ -1,0 +1,38 @@
+<div class="container">
+  <form name="productForm" ng-submit="saveProduct()">
+
+
+    <div class="input-group" ng-class="{true: 'has-success', false: 'has-error'}[!productForm.code.$invalid]">
+      <label for="code" class="control-label">Codigo do produto</label>
+      <input type="text" name="code" class="form-control" ng-model="product.id" minlength="3" required>
+      <p ng-if="productForm.code.$invalid && !productForm.code.$pristine">Código inválido precisar no mínimo 3 caracteres!</p>
+    </div>
+
+    <div class="input-group" ng-class="{true: 'has-success', false: 'has-error'}[!productForm.name.$invalid]">
+      <label for="name" class="control-label">Nome do produto</label>
+      <input type="text" name="name" class="form-control" ng-model="product.name" minlength="3" required>    
+      <p ng-if="productForm.name.$invalid && !productForm.name.$pristine">Nome inválido precisar no mínimo 3 caracteres!</p>
+    </div>
+
+
+    <div class="input-group" ng-class="{true: 'has-success', false: 'has-error'}[!productForm.price.$invalid]">
+      <label for="price" class="control-label">Preço do produto</label>      
+      <input type="text" name="price" class="form-control" ng-model="product.price" ui-money-mask required>
+      <p ng-if="productForm.price.$invalid && !productForm.price.$pristine">Preço é obrigatorio!</p>
+      
+    </div>
+
+    <div class="input-group" ng-class="{true: 'has-success', false: 'has-error'}[!productForm.stock.$invalid]">
+      <label for="stock" class="control-label">Quantidade em estoque</label>
+      <input type="number" name="stock" class="form-control" ng-model="product.stock" min="0" required>   
+      <p ng-if="productForm.stock.$invalid && !productForm.stock.$pristine">O estoque não pode ser negativo</p>
+    </div>
+
+
+
+    <br>
+
+      <input type="submit"  value="Salvar" class="btn btn-success" ng-disabled="productForm.$invalid">
+      <a ui-sref="app.product-list" class="btn btn-danger">Cancelar</a>
+  </form>
+</div>
