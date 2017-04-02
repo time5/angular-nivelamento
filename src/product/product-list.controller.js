@@ -23,7 +23,8 @@
       $scope.products = $scope.products.filter(function(product) {
         return !product.id == productId;
       });
-    };
+    };   
+    // comentario
 
   }
 
