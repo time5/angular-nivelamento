@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Meu app</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">    
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -11,11 +12,19 @@
     <ui-view></ui-view>
 
 
+    <script src="./assets/lib/jquery.js"></script>    
+    <script src="./assets/lib/bootstrap.min.js"></script>
     <script src="./assets/lib/angular.js"></script>    
     <script src="./assets/lib/angular-router-ui.js"></script>    
 
     <script src="./src/app.module.js"></script>
     <script src="./src/app.routes.js"></script>
+
+    <script src="./src/shared/shared.module.js"></script>
+    <script src="./src/shared/services/setting.service.js"></script>
+    <script src="./src/shared/services/product.service.js"></script>
+    
+    
 
     <script src="./src/product/product.module.js"></script>
     <script src="./src/product/product.routes.js"></script>

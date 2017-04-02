@@ -1,1 +1,42 @@
-<p>Hello Product View!</p>
+<div class="row">
+
+<div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Pesquisar..." ng-model="search">
+</div>
+
+<div class="col-md-6 text-right">
+    <a href="#" class="btn btn-primary">Novo</a>
+</div>
+
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Código</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Ações</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-if="isLoading">
+                <td colspan="4" class="text-center">Carregando...</td>
+            </tr>
+
+            
+
+            <tr ng-repeat="product in products | filter: search">
+                <td ng-bind="product.id"></td>
+                <td ng-bind="product.name"></td>
+                <td ng-bind="product.price | currency: 'R$ '"></td>
+                <td>
+                    <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="#" class="btn btn-danger btn-sm" ng-click="removeProduct(product.id)">Remover</a>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
